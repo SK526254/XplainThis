@@ -1,0 +1,4 @@
+     <!-- <% answers.forEach(answer => {%>
+                <div style="margin-top: 1% ; margin-left: 5%;">
+                    <%= answer %>
+                </div> -->

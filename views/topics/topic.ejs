@@ -1,0 +1,14 @@
+<h1>Topic-<%= topic %></h1>
+<!--printing questions with  answer anchor -->
+<h2>Questions</h2>
+<button><a href="/topics/<%= topic%>/new">Add Question</a></button>
+<hr>
+<% questions.forEach(question => {%>
+<div style="margin: 3%; display: inline;">
+  <%= question %>?
+    
+</div>
+<button><a href="/topics/<%= topic%>/<%= question%>">Add Answer</a></button>
+<button><a href="/topics/<%= topic%>/<%= question%>/show">Show Answers</a></button>
+<hr>
+<% }) %>

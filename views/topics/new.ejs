@@ -1,0 +1,16 @@
+<div>
+    <div><h1><%= topic%></h1></div>
+    <form action="/topics/<%= topic%>" method="post">
+       <div style="margin: 0 3% ;">
+        <h2>Question:</h2>
+     
+        <div>
+            <textarea name="questionContent" autofocus required id="" cols="100" rows="3"></textarea>
+        </div>
+        <div style="margin:2%  0 ;">
+        <button type="submit">Add Question</button>
+    </div>
+    </div>
+    </form>
+
+</div>
