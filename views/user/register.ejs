@@ -1,0 +1,22 @@
+<div>
+    <div>
+        Register
+    </div>
+    <div>
+        <% if(locals.errorMessage != null){ %>
+            <div> <%= errorMessage  %></div>
+         <% } %>
+    </div>
+    <form action="/user/register" method="post">
+        <label >FullName: </label><input  class="bg-txtColor text-bgFontColor border-indigo-950 border-2" type="text" name="fullname">
+        <label >Email: </label><input  class="bg-txtColor text-bgFontColor border-indigo-950 border-2" type="text" name="email">
+        <label >Password :</label><input  class="bg-txtColor text-bgFontColor border-indigo-950 border-2" type="text" name="password">
+        <button type="submit" class="bg-bgTxtColor text-bgFontColor border-indigo-950 border-2">Register</button>
+    </form>
+    <div class="">
+        <p class="">Have an account? <a href="/user/login">Login Here!</a> </p>
+    </div>
+    <script>
+        let header = document.querySelector('header').style.display = "none"
+    </script>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <div>
+            Login
+        
+    </div>
+    <div>
+        <% if(locals.errorMessage != null){ %>
+            <div> <%= errorMessage  %></div>
+         <% } %>
+    </div>
+    <form action="/user/login" method="post">
+        <label >Email: </label><input  class="bg-txtColor text-bgFontColor border-indigo-950 border-2" type="text" name="email">
+        <label >Password :</label><input  class="bg-txtColor text-bgFontColor border-indigo-950 border-2" type="text" name="password">
+        <button type="submit" class="bg-bgTxtColor text-bgFontColor border-indigo-950 border-2">Login</button>
+    </form>
+    <div class="">
+        </p>
+        <p class="">Don't have an account? <a href="/user/register">Register Here!</a> </p>
+
+    </div>
+    
+    <script>
+        let header = document.querySelector('header').style.display = "none"
+    </script>
+
+</div>

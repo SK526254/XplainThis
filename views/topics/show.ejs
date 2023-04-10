@@ -1,26 +1,41 @@
-<h1>Topic-<%= topic %></h1>
-<br>
-<!--printing questions with  answer anchor -->
-<h2>Answers</h2>
-<h3>Question - <%= question %></h3>
-<br>
+<div class="flex   ">
+  <div class="fixed-content-v flex-initial md:flex md:items-center h-screen w-2/12">
+    <div class="m-auto px-1/10  border-indigo-950 border-r-2 hidden  font-semibold items-center md:flex flex-col md:text-2xl md: md:justify-items-center text-center  md:gap-y-12  ">
 
-
-<% for(let i =  answers.length-1; i >=0 ;i--){%>
-UserName
-    <br>
-    <div class="answers" style="margin: 3%; display: inline;">
-     <p> <%= answers[i] %></p>
-      <button class="vote">Upvote</button>
-      <span><%= votes[i] %></span>
-      <button class="vote">Downvote</button>
-        
+      <% topics.forEach(topic => {%>
+      <div class="">
+        <a class="" href="/topics/<%=topic.name%>"><%= topic.name %> <%= topic.questionCount %></a>
+      </div>
+      <% }); %>
     </div>
-    <hr>
-<% } %> 
-<style>
+  </div>
+  <div class="flex-1 w-8/12 md:ml-2/12">
+    <h1 class="text-5xl font-semibold m-8"><%= topic %></h1>
 
- .answers a{
-    color: rgb(224, 223, 114);
-  }
-</style>
+    <!--printing questions with  answer anchor -->
+    <!-- <h2  class="text-3xl ms-8">Answers</h2> -->
+    <h3 class="text-3xl m-4 ml-8 inline ">Question - <%= question %> ?</h3>
+    <button class="mx-4 rounded-lg px-2 text-lg bg-bgFontColor text-txtColor border-indigo-950 border-2 hover:scale-x-110 duration-300 ease-in-out "><a href="/topics/<%= topic%>/<%= question%>">Add Answer</a></button>
+
+    <div class="ml-16 mt-8">
+      <% for(let i =  answers.length-1; i >=0 ;i--){%>
+      <div>
+        <h1 class="text-xl m-4">UserName</h1>
+        <div class="text-lg" style="margin-left: 3%;">
+          <p class="m-4"> <%= answers[i] %></p>
+          <button class="mx-4 rounded-lg px-2 bg-txtColor text-bgFontColor border-indigo-950 border-2 hover:text-txtColor hover:bg-bgFontColor  duration-300 ease-in-out">Upvote</button>
+          <span class="m-4"><%= votes[i] %></span>
+          <button class="mx-4 rounded-lg px-2 bg-txtColor text-bgFontColor border-indigo-950 border-2 hover:text-txtColor hover:bg-bgFontColor duration-300 ease-in-out">Downvote</button>
+        </div>
+        <hr class="m-4">
+      </div>
+
+      <% } %>
+    </div>
+
+
+  </div>
+  <div class="w-2/12 hidden lg:block">
+
+  </div>
+</div>

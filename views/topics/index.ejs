@@ -1,17 +1,36 @@
+<div class="flex md:items-center mt-16">
+  <div class="flex-initial w-2/12 hidden border-indigo-950 border-r-2 font-semibold items-center md:flex flex-col md:text-2xl md: md:justify-items-center text-center  md:gap-y-12  ">
 
-<h1>All Topics</h1>
-<br>
-<%- include('../partials/error.ejs') %>
-<br>
-<div class="sideNav">
-<% topics.forEach(topic => {%>
-    <div style="margin: 3%;">
-<a class="topic" href="/topics/<%=topic.name%>"><%= topic.name %> <%= topic.questionCount %></a>
+    <% topics.forEach(topic => {%>
+    <div class="">
+      <a class="" href="/topics/<%=topic.name%>"><%= topic.name %> <%= topic.questionCount %></a>
     </div>
-<% }); %>
+    <% }); %>
+  </div>
+
+  <div class="flex-1  w-8/12">
+    <div class="m-4 md:m-8 ">
+      <h1 class="text-2xl font-semibold md:text-5xl"> Topics</h1>
+    </div>
+    <hr class="my-4 md:my-8">
+
+    <%- include('../partials/error.ejs') %>
+
+    <div class="flex flex-col  gap-y-8 text-xl font-semibold items-center md:grid grid-cols-2 md:text-2xl md:justify-items-center text-center  md:gap-y-12  ">
+
+      <% topics.forEach(topic => {%>
+      <div class="">
+        <a class="" href="/topics/<%=topic.name%>">
+          <div>
+            <img class="m-2 hover:shadow-2xl hover:opacity-90 md:m-4 rounded-2xl w-4/5 md:w-full" src="/Images/Topics/<%= topic.name %>1.jpg" alt="Images">
+          </div>
+          <%= topic.name %> <%= topic.questionCount %>
+        </a>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="w-2/12 hidden lg:block">
+
+  </div>
 </div>
-<% topics.forEach(topic => {%>
-    <div style="margin: 3%;">
-<a class="topic" href="/topics/<%=topic.name%>"><%= topic.name %> <%= topic.questionCount %></a>
-    </div>
-<% }); %>

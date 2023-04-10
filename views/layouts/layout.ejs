@@ -1,41 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="m-0 p-0">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
-   
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                bgFontColor : "#0B2447",
+                txtColor : '#fff'
+              },
+              maxWidth: {
+                '1/2': '50%',
+                '1/10':'10%',
+                '1/5': '20%',
+                '4/5':'80%'
+              } ,
+              padding: {
+                '1/2': '50%',
+                '1/10':'10%',
+                '1/5': '20%',
+                '4/5':'80%'
+              } ,
+              margin:{
+                '2/12':"20%"
+              },
+              screens: {
+                  'sm': '480px',
+                  'md': '768px',
+                  'lg': '976px',
+                  'xl': '1440px',
+                  '2xl': '1536px'
+              }
+            }
+          }
+        }
+      </script>
 <style>
  
+ .fixed-content-v {
+    min-height:100%;
+    position:fixed;
+    overflow-y:hidden;
+    top: 3rem;
+    overflow-x:hidden;
+} 
+.overflow-hidden{
+  overflow-y:hidden;
+}
 </style>   
 </head>
-<body>
-<header class="">
-    <nav >
-        <h1><a href="/"><span>X</span>PLAIN</a></h1>
-    </nav>
-    
-    <ul >
+<body class="m-0 p-0 ">
+<header class="fixed top-0 flex flex-row  w-full bg-bgFontColor text-2xl text-txtColor">
+   
+    <div class=" md:m-auto">
+       <a href="/">
+           <img src="/Images/logos/1.png"  class="h-12 md:h-20 w-auto " alt="" srcset="">
+       </a>
+    </div>
+    <ul class="hidden  space-x-16 text-xl m-auto md:flex">
         <li><a href="/">Home</a></li>
         <li><a href="/topics">Topics</a></li>
         <li><a href="/materials">Materials</a></li>
         <li><a href="/about">About Us</a></li>
+        <li><a href="/user">Account</a></li>
     </ul>
 </header>
-<%- body %>
+<main class="w-full mt-24 ">
+    <%- body %>
+</main>
 
 <script>
-    // $('.vote').click(function () {
-        
-    //     let i
-    //     (this.innerText =="Upvote")? i = 1 : i =-1;
-    //     answer = $(this).prevAll('p').text()
-    //     console.log(answer);
-    //     $.post("http://localhost:3000/topics/answers",{vote : i , answer : answer})
-    // })
 </script>
+
 </body>
 </html>

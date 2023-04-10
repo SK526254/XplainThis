@@ -1,14 +1,39 @@
-<h1>Topic-<%= topic %></h1>
-<!--printing questions with  answer anchor -->
-<h2>Questions</h2>
-<button><a href="/topics/<%= topic%>/new">Add Question</a></button>
-<hr>
-<% questions.forEach(question => {%>
-<div style="margin: 3%; display: inline;">
-  <%= question %>?
-    
+<div class="flex   ">
+  <div class="fixed-content-v flex-initial md:flex md:items-center h-screen w-2/12">
+    <div class="m-auto px-1/10  border-indigo-950 border-r-2   hidden  font-semibold items-center md:flex flex-col md:text-2xl md: md:justify-items-center text-center  md:gap-y-12  ">
+
+      <% topics.forEach(topic => {%>
+      <div class="">
+        <a class="" href="/topics/<%=topic.name%>"><%= topic.name %> <%= topic.questionCount %></a>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="flex-1 md:ml-2/12 w-8/12 md:items-center">
+    <h1 class="text-5xl font-semibold m-8"><%= topic %></h1>
+    <!--printing questions with  answer anchor -->
+    <h2 class="text-3xl m-8">Questions</h2>
+    <button class="mx-8 rounded-2xl py-2 px-3 text-lg bg-bgFontColor text-txtColor "><a class="py-2 px-3" href="/topics/<%= topic%>/new">Add Question</a></button>
+    <hr>
+
+    <div class="ml-8 mt-8 font-medium  ">
+      <% questions.forEach(question => {%>
+      <div class="">
+        <div class="inline mb-4 text-xl flex-none">
+          <%= question %> ?
+        </div>
+        <div class=" m-4 flex flex-row justify-end ">
+          <button class="mx-4 rounded-lg px-2 text-lg bg-txtColor text-bgFontColor border-indigo-950 border-2 hover:text-txtColor hover:bg-bgFontColor duration-300 ease-in-out"><a href="/topics/<%= topic%>/<%= question%>">Add Answer</a></button>
+          <button class="mx-4 rounded-lg px-2 text-lg bg-txtColor text-bgFontColor border-indigo-950 border-2 hover:text-txtColor hover:bg-bgFontColor duration-300 ease-in-out"><a href="/topics/<%= topic%>/<%= question%>/show">Show Answers</a></button>
+        </div>
+      </div>
+      <hr>
+      <% }) %>
+    </div>
+
+
+  </div>
+  <div class="w-2/12 hidden lg:block">
+
+  </div>
 </div>
-<button><a href="/topics/<%= topic%>/<%= question%>">Add Answer</a></button>
-<button><a href="/topics/<%= topic%>/<%= question%>/show">Show Answers</a></button>
-<hr>
-<% }) %>
